@@ -19,6 +19,18 @@ namespace Challenge16JsonSerializer
             };
             string jsonString = JsonSerializer.Serialize(membersToJson);
             Console.WriteLine(jsonString);
+            var squadTojson = new SquadTeam()
+            {
+                squadName = "Liga de la Justicia",
+                homeTown = "New York",
+                formed = 5,
+                secretBase = "base lunar atalaya",
+                active = false,
+                members = new List<Members>(),
+            };
+            squadTojson.members.Add(membersToJson);
+            string squadConvertJson = JsonSerializer.Serialize(squadTojson);
+            Console.WriteLine(squadConvertJson);
         }
     }
 }
